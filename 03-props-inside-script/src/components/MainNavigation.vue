@@ -1,17 +1,21 @@
 <script setup>
-    defineProps({
+    const props = defineProps({
         title: {
             type: String,
             required: true,
             default: "matyi"
         }
     });
+
+    function alertTitle() {
+        alert("the title is: " + props.title);
+    }
 </script>
 
 <template>
     <nav>
         <ul>
-            <li><a href="/">{{ title }}</a></li>
+            <li><a href="/"  @click="alertTitle">{{ title }}</a></li>
             <li><a href="https://vuejs.org/">Vue.js</a></li>
         </ul>
     </nav>
